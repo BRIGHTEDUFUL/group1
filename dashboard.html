@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Apotica Secure Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="dashboard">
+    <div class="background"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="glass-nav fade-in">
+        <div class="nav-brand">
+            <div class="lock-icon small morph"></div>
+            <h2>Apotica Vault</h2>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="admin.html">Admin Panel</a>
+            <a href="audit.html">Audit Logs</a>
+        </div>
+        <div class="nav-user">
+            <span id="userRoleBadge" class="role-badge">Admin</span>
+            <button id="logoutBtn" class="btn btn-outline ripple">Logout</button>
+        </div>
+    </nav>
+    
+    <div class="container dashboard-container">
+        <div class="glass-card dashboard-header fade-in">
+            <h1>Welcome back, <span id="userName">Administrator</span></h1>
+            <p>Secure • Encrypted • Compliant</p>
+            <div class="security-status">SYSTEM STATUS: SECURE | LAST LOGIN: TODAY 09:45 AM</div>
+        </div>
+        
+        <!-- Search Section -->
+        <div class="glass-card search-section fade-in delay-1">
+            <div class="input-group search-group">
+                <input type="text" id="searchInput" placeholder="Search credentials...">
+                <button class="btn btn-icon ripple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Credentials Table -->
+        <div class="glass-card table-container fade-in delay-2">
+            <div class="table-header">
+                <h2>Credentials Vault</h2>
+                <button id="addCredentialBtn" class="btn btn-primary ripple">Add New</button>
+            </div>
+            <div class="table-wrapper">
+                <table id="credentialsTable">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Last Modified</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="credentialsTableBody">
+                        <!-- Rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="glass-modal">
+            <div class="modal-header">
+                <h3>Password Details</h3>
+                <button class="close-btn ripple">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="credential-info">
+                    <p><strong>Service:</strong> <span id="modalService"></span></p>
+                    <p><strong>Username:</strong> <span id="modalUsername"></span></p>
+                    <div class="password-field">
+                        <label>Password:</label>
+                        <div class="password-display">
+                            <span id="modalPassword">••••••••</span>
+                            <button id="revealPasswordBtn" class="btn btn-small ripple">Reveal</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="warning-banner">
+                    <p>⚠️ Access to this password is logged for security purposes</p>
+                </div>
+                <div class="countdown-timer">
+                    <div class="timer-ring small">
+                        <svg viewBox="0 0 36 36" class="circular-progress">
+                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" 
+                                  fill="none" stroke="#eee" stroke-width="2" />
+                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" 
+                                  fill="none" stroke="#ff3b30" stroke-width="2" stroke-dasharray="100, 100" 
+                                  class="progress-ring-circle" />
+                        </svg>
+                    </div>
+                    <span id="countdownText">10s</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="copyPasswordBtn" class="btn btn-primary ripple">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

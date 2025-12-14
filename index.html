@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apotica Secure Vault</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="animations.css">
+</head>
+<body class="index">
+	<div class="background"></div>
+
+	<div class="container">
+		<div class="glass-card fade-in-blur">
+			<div class="logo">
+				<div class="lock-icon morph float"></div>
+			</div>
+			<h1>Redirecting to Login…</h1>
+			<p>You will be taken to the secure login page. If not redirected, use the button below.</p>
+			<div class="security-status">STARTING SESSION AT LOGIN</div>
+			<div class="cta-row">
+				<a class="btn btn-primary ripple" href="login.html">Go to Login</a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Force the flow to begin at login.
+		window.location.href = 'login.html';
+	</script>
+	<script src="app.js"></script>
+</body>
+</html>

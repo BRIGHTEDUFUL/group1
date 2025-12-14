@@ -1,0 +1,629 @@
+/* Animations and Transitions */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Enhanced Fade In with Blur */
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.fade-in-blur {
+    animation: fadeInBlur 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* Security Scan Animation */
+@keyframes securityScan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.security-scan {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, 
+        rgba(0, 200, 255, 0), 
+        rgba(0, 200, 255, 0.8), 
+        rgba(0, 200, 255, 0));
+    animation: securityScan 3s ease-in-out infinite;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Staggered Fade In for Table Rows */
+@keyframes staggeredFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.staggered-fade-in {
+    animation: staggeredFadeIn 0.4s ease forwards;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 200, 255, 0.4);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(0, 200, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 200, 255, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-5px);
+    }
+    40%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+/* Security Alert Animation */
+@keyframes securityAlert {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(255, 59, 48, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+    }
+}
+
+.security-alert {
+    animation: securityAlert 1.5s infinite;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+    }
+}
+
+.glow {
+    animation: glow 2s infinite;
+}
+
+/* Ripple Effect for Buttons */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1);
+    transform-origin: center;
+    transition: all 0.6s ease;
+}
+
+.ripple:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Morph Animation */
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+.morph {
+    animation: morph 8s ease-in-out infinite;
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.3s ease forwards;
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.4s ease forwards;
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.4s ease forwards;
+}
+
+/* Countdown Timer Animation */
+@keyframes countdown {
+    from {
+        stroke-dasharray: 100, 100;
+    }
+    to {
+        stroke-dasharray: 0, 100;
+    }
+}
+
+.countdown-animation {
+    animation: countdown 60s linear forwards;
+}
+
+.countdown-animation.short {
+    animation: countdown 10s linear forwards;
+}
+
+/* Password Reveal Animation */
+@keyframes revealPassword {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-password {
+    animation: revealPassword 0.3s ease forwards;
+}
+
+/* Copy Feedback Animation */
+@keyframes copyFeedback {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.copy-feedback {
+    animation: copyFeedback 0.5s ease;
+}
+
+/* Page Transition */
+.page-transition {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+/* Neon Glow Effect */
+@keyframes neonGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary), 0 0 40px var(--primary);
+    }
+    50% {
+        text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px var(--primary), 0 0 12px var(--primary), 0 0 15px var(--primary), 0 0 20px var(--primary);
+    }
+}
+
+.neon-glow {
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+}
+
+/* Input Focus Animation */
+.input-focus {
+    position: relative;
+}
+
+.input-focus::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.input-focus:focus-within::after {
+    width: 100%;
+}
+
+/* Modal Overlay Fade */
+@keyframes modalFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-fade {
+    animation: modalFade 0.3s ease;
+}
+
+/* Button Hover Micro-interactions */
+.btn-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-hover:hover::before {
+    left: 100%;
+}
+
+/* Table Row Entry Animation */
+@keyframes rowEntry {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.row-entry {
+    animation: rowEntry 0.3s ease forwards;
+}
+
+/* Warning Banner Animation */
+@keyframes warningPulse {
+    0% {
+        background: rgba(255, 59, 48, 0.15);
+    }
+    50% {
+        background: rgba(255, 59, 48, 0.25);
+    }
+    100% {
+        background: rgba(255, 59, 48, 0.15);
+    }
+}
+
+.warning-pulse {
+    animation: warningPulse 2s infinite;
+}
+
+/* Security Status Animation */
+@keyframes securityStatus {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.security-status {
+    background: linear-gradient(270deg, 
+        var(--security-green), 
+        var(--primary), 
+        var(--security-green));
+    background-size: 200% 200%;
+    animation: securityStatus 3s ease infinite;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Delayed Animations */
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+.delay-5 {
+    animation-delay: 0.5s;
+}
+
+.delay-6 {
+    animation-delay: 0.6s;
+}
+
+.delay-7 {
+    animation-delay: 0.7s;
+}
+
+.delay-8 {
+    animation-delay: 0.8s;
+}
+
+.delay-9 {
+    animation-delay: 0.9s;
+}
+
+.delay-10 {
+    animation-delay: 1.0s;
+}
+
+/* Apply staggered animations to table rows */
+tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+tbody tr:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+tbody tr:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+tbody tr:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+tbody tr:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+tbody tr:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+tbody tr:nth-child(10) {
+    animation-delay: 1.0s;
+}
+
+tbody tr:nth-child(11) {
+    animation-delay: 1.1s;
+}
+
+tbody tr:nth-child(12) {
+    animation-delay: 1.2s;
+}
+
+tbody tr:nth-child(13) {
+    animation-delay: 1.3s;
+}
+
+tbody tr:nth-child(14) {
+    animation-delay: 1.4s;
+}
+
+tbody tr:nth-child(15) {
+    animation-delay: 1.5s;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Advanced Gradient Animation */
+.gradient-animation {
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

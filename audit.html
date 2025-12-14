@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Logs - Apotica Secure Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="audit">
+    <div class="background"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="glass-nav fade-in">
+        <div class="nav-brand">
+            <div class="lock-icon small morph"></div>
+            <h2>Apotica Vault</h2>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Admin Panel</a>
+            <a href="audit.html" class="active">Audit Logs</a>
+        </div>
+        <div class="nav-user">
+            <span id="userRoleBadge" class="role-badge">Admin</span>
+            <button id="logoutBtn" class="btn btn-outline ripple">Logout</button>
+        </div>
+    </nav>
+    
+    <div class="container audit-container">
+        <div class="glass-card audit-header fade-in">
+            <h1>Audit Logs</h1>
+            <p>Security events and access history</p>
+            <div class="security-status">AUDIT LOGGING ACTIVE | REAL-TIME MONITORING</div>
+        </div>
+        
+        <!-- Filter Section -->
+        <div class="glass-card filter-section fade-in delay-1">
+            <div class="filter-group">
+                <label for="logTypeFilter">Event Type</label>
+                <select id="logTypeFilter">
+                    <option value="all">All Events</option>
+                    <option value="access">Password Access</option>
+                    <option value="modify">Credential Modification</option>
+                    <option value="delete">Credential Deletion</option>
+                    <option value="login">Login Attempts</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="dateFilter">Date Range</label>
+                <select id="dateFilter">
+                    <option value="today">Today</option>
+                    <option value="week">Last 7 Days</option>
+                    <option value="month">Last 30 Days</option>
+                    <option value="all">All Time</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Audit Logs Table -->
+        <div class="glass-card table-container fade-in delay-2">
+            <div class="table-header">
+                <h2>Security Events</h2>
+            </div>
+            <div class="table-wrapper">
+                <table id="auditLogsTable">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>User</th>
+                            <th>Event Type</th>
+                            <th>Description</th>
+                            <th>IP Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="auditLogsTableBody">
+                        <!-- Rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Verification - Apotica Secure Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="mfa">
+    <div class="background"></div>
+    <div class="container">
+        <div class="glass-card mfa-card fade-in-blur">
+            <div class="logo">
+                <div class="lock-icon morph float"></div>
+            </div>
+            <h2 class="neon-glow">Multi-Factor Authentication</h2>
+            <p>Enter the 6-digit code from your authenticator app</p>
+            
+            <div class="mfa-code-container">
+                <input type="text" class="mfa-input" maxlength="1" data-index="0">
+                <input type="text" class="mfa-input" maxlength="1" data-index="1">
+                <input type="text" class="mfa-input" maxlength="1" data-index="2">
+                <input type="text" class="mfa-input" maxlength="1" data-index="3">
+                <input type="text" class="mfa-input" maxlength="1" data-index="4">
+                <input type="text" class="mfa-input" maxlength="1" data-index="5">
+            </div>
+            
+            <div class="timer-container">
+                <div class="timer-ring">
+                    <svg viewBox="0 0 36 36" class="circular-progress">
+                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" 
+                              fill="none" stroke="#eee" stroke-width="2" />
+                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" 
+                              fill="none" stroke="#00c8ff" stroke-width="2" stroke-dasharray="100, 100" 
+                              class="progress-ring-circle" />
+                    </svg>
+                </div>
+                <span class="timer-text">60s</span>
+            </div>
+            
+            <button id="verifyBtn" class="btn btn-secondary ripple" disabled>Verify Code</button>
+            
+            <div class="resend-container">
+                <p>Didn't receive a code? <a href="#" id="resendLink">Resend</a></p>
+            </div>
+            
+            <div class="footer">
+                <p class="security-note">Your session is encrypted and secured</p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Apotica Secure Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="login">
+    <div class="background"></div>
+    <div class="container">
+        <div class="glass-card login-card fade-in-blur">
+            <div class="logo">
+                <div class="lock-icon morph float"></div>
+            </div>
+            <h2 class="neon-glow">Secure Login</h2>
+            <p>Enterprise Password Management System</p>
+            <div class="security-status">SYSTEM STATUS: SECURE</div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary ripple">Authenticate</button>
+            </form>
+            <div class="footer">
+                <p>All access attempts are monitored and logged</p>
+                <p class="security-note">End-to-End Encryption Enabled</p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
