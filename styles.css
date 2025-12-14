@@ -59,9 +59,10 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 200, 255, 0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.08) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
     z-index: -1;
+    will-change: transform;
 }
 
 .background::after {
@@ -97,8 +98,8 @@ body {
 /* Glassmorphism Effect */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius-md);
     box-shadow: var(--card-shadow);
@@ -156,8 +157,8 @@ body {
     justify-content: space-between;
     align-items: center;
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius-md);
     padding: 1rem 2rem;
@@ -183,7 +184,8 @@ body {
     position: relative;
     margin: 0 auto 1rem;
     box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
-    animation: pulseLock 2s infinite;
+    animation: pulseLock 3s infinite;
+    will-change: box-shadow;
 }
 
 .lock-icon::before {

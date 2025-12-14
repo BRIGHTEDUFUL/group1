@@ -35,6 +35,19 @@ function formatDate(dateString) {
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
+// Debounce utility for search and filter
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 function getCurrentUser() {
     return JSON.parse(localStorage.getItem('currentUser')) || null;
 }
@@ -322,7 +335,7 @@ function initDashboardPage() {
     // Search functionality
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        searchInput.addEventListener('input', filterCredentials);
+        searchInput.addEventListener('input', debounce(filterCredentials, 250));
     }
     
     // Add credential button (Admin only)
@@ -713,11 +726,11 @@ function initAuditPage() {
     const dateFilter = document.getElementById('dateFilter');
     
     if (logTypeFilter) {
-        logTypeFilter.addEventListener('change', filterAuditLogs);
+        logTypeFilter.addEventListener('change', debounce(filterAuditLogs, 150));
     }
     
     if (dateFilter) {
-        dateFilter.addEventListener('change', filterAuditLogs);
+        dateFilter.addEventListener('change', debounce(filterAuditLogs, 150));
     }
 }
 
